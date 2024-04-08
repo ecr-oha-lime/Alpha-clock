@@ -1,163 +1,170 @@
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Noto Sans";
+    margin: 0; /* 设置所有元素的外边距为0 */
+    padding: 0; /* 设置所有元素的内边距为0 */
+    box-sizing: border-box; /* 设置所有元素的盒模型为边框盒 */
+    font-family: "Noto Sans"; /* 设置所有元素的字体为"Noto Sans" */
 }
 
 .box {
-    position: relative;
-    inset: 0;
-    border-radius: 50%;
-    z-index: 1000;
+    position: relative; /* 设置.box的定位方式为相对定位 */
+    inset: 0; /* 设置.box的上下左右偏移量为0 */
+    border-radius: 50%; /* 设置.box的边框半径为50%，使其成为一个圆形 */
+    z-index: 1000; /* 设置.box的堆叠顺序为1000，使其在z轴上位于其他元素之上 */
 }
 
 .box::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: 50%;
-    transform: translateX(-50%);
-    width: 2px;
-    height: 30px;
-    background: var(--clr);
-    border-radius: 4px;
+    content: ''; /* 设置伪元素的内容为空 */
+    position: absolute; /* 设置伪元素的定位方式为绝对定位 */
+    left: 50%; /* 设置伪元素的左偏移量为50% */
+    bottom: 50%; /* 设置伪元素的底部偏移量为50% */
+    transform: translateX(-50%); /* 使用transform属性将伪元素在x轴上向左移动50% */
+    width: 2px; /* 设置伪元素的宽度为2px */
+    height: 30px; /* 设置伪元素的高度为30px */
+    background: var(--clr); /* 设置伪元素的背景色为自定义属性--clr的值 */
+    border-radius: 4px; /* 设置伪元素的边框半径为4px */
 }
 
 .box:nth-child(1):after {
-    height: 20px;
-    width: 4px;
+    height: 20px; /* 设置.box的第一个子元素的伪元素的高度为20px */
+    width: 4px; /* 设置.box的第一个子元素的伪元素的宽度为4px */
 }
 
 .box:nth-child(2):after {
-    height: 25px;
-    width: 3px;
+    height: 25px; /* 设置.box的第二个子元素的伪元素的高度为25px */
+    width: 3px; /* 设置.box的第二个子元素的伪元素的宽度为3px */
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    min-height: 100vh;
-    height: 100vh;
+    display: flex; /* 设置body的显示方式为弹性布局 */
+    justify-content: center; /* 设置body的主轴对齐方式为居中对齐 */
+    min-height: 100vh; /* 设置body的最小高度为视口高度的100% */
+    height: 100vh; /* 设置body的高度为视口高度的100% */
 }
 
 .clock {
-    position: relative;
-    display: flex;
-    gap: 20px;
+    position: relative; /* 设置.clock的定位方式为相对定位 */
+    display: flex; /* 设置.clock的显示方式为弹性布局 */
+    gap: 20px; /* 设置.clock的子元素之间的间隔为20px */
 }
 
 .clock .digital {
-    position: relative;
-    width: 120px;
-    height: 120px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #c9d5e0;
-    border-radius: 30px;
-    box-shadow: 20px 20px 20px -10px rgba(0, 0, 0, 0.15),
-    inset 15px 15px 10px rgba(255, 255, 255, 0.5),
-    -15px -15px 35px rgba(255, 255, 255, 0.35),
-    inset -1px -1px 10px rgba(0, 0, 0, 0.2);
+    position: relative; /* 设置相对定位，为后续绝对定位的子元素提供参考 */
+    width: 120px; /* 设置元素的宽度 */
+    height: 120px; /* 设置元素的高度 */
+    display: flex; /* 将子元素以弹性盒子模型进行布局 */
+    justify-content: center; /* 在水平方向上居中对齐子元素 */
+    align-items: center; /* 在垂直方向上居中对齐子元素 */
+    background: #c9d5e0; /* 设置背景颜色 */
+    border-radius: 30px; /* 设置圆角 */
+    box-shadow: 20px 20px 20px -10px rgba(0, 0, 0, 0.15), /* 设置阴影效果 */
+                inset 15px 15px 10px rgba(255, 255, 255, 0.5),
+                -15px -15px 35px rgba(255, 255, 255, 0.35),
+                inset -1px -1px 10px rgba(0, 0, 0, 0.2);
 }
 
 .clock .digital .screen {
-    position: absolute;
-    inset: 20px;
-    background: #152b4a;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 5px 5px 15px 0 #152b4a66,
-    inset 5px 5px 5px rgba(255, 25, 255, 0.35),
-    -6px -6px 10px rgba(255, 255, 255, 1);
+    position: absolute; /* 设置绝对定位，相对于最近的已定位祖先元素 */
+    inset: 20px; /* 设置元素的偏移量 */
+    background: #152b4a; /* 设置背景颜色 */
+    border-radius: 20px; /* 设置圆角 */
+    display: flex; /* 将子元素以弹性盒子模型进行布局 */
+    justify-content: center; /* 在水平方向上居中对齐子元素 */
+    align-items: center; /* 在垂直方向上居中对齐子元素 */
+    box-shadow: 5px 5px 15px 0 #152b4a66, /* 设置阴影效果 */
+                inset 5px 5px 5px rgba(255, 25, 255, 0.35),
+                -6px -6px 10px rgba(255, 255, 255, 1);
 }
 
 .clock .digital .screen::before {
-    content: attr(data-text);
-    position: absolute;
-    bottom: -21px;
-    left: 50%;
-    transform: translateX(-50%) scale(0.75);
-    letter-spacing: 0.1rem;
-    color: #333;
-    text-transform: uppercase;
+    content: attr(data-text); /* 设置元素的内容 */
+    position: absolute; /* 设置绝对定位，相对于最近的已定位祖先元素 */
+    bottom: -21px; /* 设置底部偏移量 */
+    left: 50%; /* 设置左侧偏移量 */
+    transform: translateX(-50%) scale(0.75); /* 使用 transform 属性进行水平偏移 */
+    letter-spacing: 0.1rem; /* 设置字母间距 */
+    color: #333; /* 设置字体颜色 */
+    text-transform: uppercase; /* 设置文本转换为大写 */
 }
 
+
 .clock .digital .time {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: absolute; /* 设置绝对定位，相对于最近的已定位祖先元素 */
+    inset: 0; /* 将元素的边框定位到其包含块的边框 */
+    display: flex; /* 将子元素以弹性盒子模型进行布局 */
+    justify-content: center; /* 在水平方向上居中对齐子元素 */
+    align-items: center; /* 在垂直方向上居中对齐子元素 */
 }
 
 .clock .digital .time div {
-    position: relative;
-    font-size: 2.9rem;
-    color: var(--clr);
-    letter-spacing: 0.1rem;
-    margin-left: 0.1rem;
+    position: relative; /* 设置相对定位，相对于正常定位的位置 */
+    font-size: 2.9rem; /* 设置字体大小 */
+    color: var(--clr); /* 设置字体颜色 */
+    letter-spacing: 0.1rem; /* 设置字母间距 */
+    margin-left: 0.1rem; /* 设置左侧外边距 */
 }
-
 .clock .digital:last-child::before {
-    content: "";
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    background: #152b4a;
-    border: 2px solid #fff;
-    z-index: 100000;
-    border-radius: 50%;
+    content: ""; /* 使用 content 属性来插入伪元素 */
+    position: absolute; /* 将元素定位到父元素的相对位置 */
+    width: 4px; /* 设置元素宽度 */
+    height: 4px; /* 设置元素高度 */
+    background: #152b4a; /* 设置背景颜色 */
+    border: 2px solid #fff; /* 设置边框，实现外边框 */
+    z-index: 100000; /* 设置元素的堆叠顺序 */
+    border-radius: 50%; /* 设置圆角边框 */
 }
 
 .clock .digital:last-child::after {
-    content: "";
-    position: absolute;
-    inset: 20px;
-    background: #152b4a;
-    border-radius: 50%;
-    box-shadow: 5px 5px 15px 0 #152b4a66,
-    inset 5px 5px 5px rgba(255, 25, 255, 0.35),
-    -6px -6px 10px rgba(255, 255, 255, 1);
+    content: ""; /* 使用 content 属性来插入伪元素 */
+    position: absolute; /* 将元素定位到父元素的相对位置 */
+    inset: 20px; /* 使用 inset 属性设置定位，相当于同时设置 top, right, bottom, left */
+    background: #152b4a; /* 设置背景颜色 */
+    border-radius: 50%; /* 设置圆角边框 */
+    box-shadow: /* 设置阴影效果 */
+        5px 5px 15px 0 #152b4a66, /* 外阴影 */
+        inset 5px 5px 5px rgba(255, 25, 255, 0.35), /* 内阴影 */
+        -6px -6px 10px rgba(255, 255, 255, 1); /* 反射阴影 */
 }
 
 #ampm {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%) scale(0.75);
-    color: #333;
-    letter-spacing: 0.1rem;
+    position: absolute; /* 将元素定位到父元素的相对位置 */
+    bottom: 0; /* 设置元素距离底部的距离 */
+    left: 50%; /* 设置元素距离左侧的距离 */
+    transform: translateX(-50%) scale(0.75); /* 设置元素的平移和缩放 */
+    color: #333; /* 设置字体颜色 */
+    letter-spacing: 0.1rem; /* 设置字符间距 */
 }
 
-/* 样式平滑转动的设置 */
+/* 啊♂，舒服
+    家人们谁懂啊*/
 #hr, #mn, #sc {
     transition: transform 0.5s linear(0 0%, 0.22 2.1%, 0.86 6.5%, 1.11 8.6%, 1.3 10.7%, 1.35 11.8%, 1.37 12.9%, 1.37 13.7%, 1.36 14.5%, 1.32 16.2%, 1.03 21.8%, 0.94 24%, 0.89 25.9%, 0.88 26.85%, 0.87 27.8%, 0.87 29.25%, 0.88 30.7%, 0.91 32.4%, 0.98 36.4%, 1.01 38.3%, 1.04 40.5%, 1.05 42.7%, 1.05 44.1%, 1.04 45.7%, 1 53.3%, 0.99 55.4%, 0.98 57.5%, 0.99 60.7%, 1 68.1%, 1.01 72.2%, 1 86.7%, 1 100%);
 }
 
 .pic{
-    background-image: url("sheet.png");
-    background-repeat:no-repeat;
-    background-attachment:fixed;
-    background-position:right top;
+    background-image: url("sheet.png"); /* 设置背景图片 */
+    background-repeat:no-repeat; /* 设置背景图片不重复 */
+    background-attachment:fixed; /* 设置背景图片固定 */
+    background-position:right top; /* 设置背景图片位置 */
     z-index: 999; /* 将Z轴上的值设置为一个较高的数字，确保它显示在其他内容之上 */
 }
 
-/* Modify container */
+/* 老子不会，懂？ */
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    display: flex; /* 将容器设置为弹性布局 */
+    justify-content: center; /* 设置主轴方向上的对齐方式为居中 */
+    align-items: center; /* 设置交叉轴方向上的对齐方式为居中 */
+    height: 100vh; /* 设置容器的高度为视窗的高度 */
 }
 
-/* Modify date */
+/* tnnd怎么就是不居中 */
 .date {
-    text-shadow: 8px 8px 8px rgba(255, 255, 255, 0.35); 
-    font-family: sans-serif; 
-    font-size: 2rem; 
-    color: white;
+    text-shadow: 8px 8px 8px rgba(255, 255, 255, 0.35); /* 设置文本阴影效果 */
+    font-family: sans-serif; /* 设置字体 */
+    font-size: 2rem; /* 设置字体大小 */
+    color: white; /* 设置字体颜色 */
+    position:relative; /* 将元素设置为相对定位 */
+    align-items:center; /* 设置交叉轴方向上的对齐方式为居中 */
+    display:flex; /* 将元素设置为弹性布局 */
 }
+/* 注释肯定是GPT写的啦 */
