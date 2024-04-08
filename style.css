@@ -43,9 +43,12 @@ body {
 }
 
 .clock {
-    position: relative; /* 设置.clock的定位方式为相对定位 */
-    display: flex; /* 设置.clock的显示方式为弹性布局 */
-    gap: 20px; /* 设置.clock的子元素之间的间隔为20px */
+    position: absolute; /* 使用绝对定位 */
+    top: 10%; /* 与页面顶部距离为页面高度的50% */
+    left: -122.5%; /* 与页面左侧距离为页面宽度的50% */
+    transform: translate(-50%, -50%); /* 将元素水平和垂直居中 */
+    display: flex;
+    gap: 20px;
 }
 
 .clock .digital {
@@ -135,36 +138,37 @@ body {
     letter-spacing: 0.1rem; /* 设置字符间距 */
 }
 
-/* 啊♂，舒服
-    家人们谁懂啊*/
+/* 啊♂，舒服 */
 #hr, #mn, #sc {
     transition: transform 0.5s linear(0 0%, 0.22 2.1%, 0.86 6.5%, 1.11 8.6%, 1.3 10.7%, 1.35 11.8%, 1.37 12.9%, 1.37 13.7%, 1.36 14.5%, 1.32 16.2%, 1.03 21.8%, 0.94 24%, 0.89 25.9%, 0.88 26.85%, 0.87 27.8%, 0.87 29.25%, 0.88 30.7%, 0.91 32.4%, 0.98 36.4%, 1.01 38.3%, 1.04 40.5%, 1.05 42.7%, 1.05 44.1%, 1.04 45.7%, 1 53.3%, 0.99 55.4%, 0.98 57.5%, 0.99 60.7%, 1 68.1%, 1.01 72.2%, 1 86.7%, 1 100%);
 }
 
-.pic{
-    background-image: url("sheet.png"); /* 设置背景图片 */
-    background-repeat:no-repeat; /* 设置背景图片不重复 */
-    background-attachment:fixed; /* 设置背景图片固定 */
-    background-position:right top; /* 设置背景图片位置 */
-    z-index: 999; /* 将Z轴上的值设置为一个较高的数字，确保它显示在其他内容之上 */
+.pic {
+    position: fixed; /* 将图片固定在页面 */
+    top: 0; /* 与页面顶部对齐 */
+    right: -2.5%; /* 与页面右侧对齐 */
+    z-index: 999; /* 设置图片的层级 */
+    background-image: url("sheet.png");
+    background-repeat: no-repeat;
+    background-size: contain; /* 将背景图片调整为适应容器大小 */
 }
 
 /* 老子不会，懂？ */
 .container {
     display: flex; /* 将容器设置为弹性布局 */
     justify-content: center; /* 设置主轴方向上的对齐方式为居中 */
-    align-items: center; /* 设置交叉轴方向上的对齐方式为居中 */
-    height: 100vh; /* 设置容器的高度为视窗的高度 */
+    align-items: flex-start; /* 将元素在交叉轴上对齐到页面顶部 */
+    height: 98vh; /* 将容器高度设置为视窗高度的98% */
+    padding-top: 2vh; /* 在容器顶部留出视窗高度的2%的空隙 */
 }
 
 /* tnnd怎么就是不居中 */
 .date {
-    text-shadow: 8px 8px 8px rgba(255, 255, 255, 0.35); /* 设置文本阴影效果 */
-    font-family: sans-serif; /* 设置字体 */
-    font-size: 2rem; /* 设置字体大小 */
-    color: white; /* 设置字体颜色 */
-    position:relative; /* 将元素设置为相对定位 */
-    align-items:center; /* 设置交叉轴方向上的对齐方式为居中 */
-    display:flex; /* 将元素设置为弹性布局 */
+    text-shadow: 8px 8px 8px #d2d2d2; 
+    font-family: sans-serif; 
+    font-size: 2rem; 
+    position: relative; 
+    margin-top: 120px; 
+    color: white;
+    left: -172.25%;
 }
-/* 注释肯定是GPT写的啦 */
